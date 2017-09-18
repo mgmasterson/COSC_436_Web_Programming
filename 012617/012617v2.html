@@ -1,0 +1,103 @@
+<!--
+Michael Masterson
+http://people.emich.edu/mmaster8/COSC436/012617/012617v2.html
+COSC 436
+Assignment 01/26/17
+Winter 2017
+
+See for what assignment is :
+http://emunix.emich.edu/~haynes/436/wi17/Assignment/hw0126.txt
+-->
+
+<!-- Sites referenced:
+http://www.w3schools.com/php/php_forms.asp
+http://www.w3schools.com/html/html_tables.asp
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>012617</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="012617.css">
+</head>
+<body>
+<!--Navigation bar-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://people.emich.edu/mmaster8/">Michael EMU</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://people.emich.edu/mmaster8/">Home</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/Archives/">Archives</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/COSC436/">COSC 436</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/aboutme.html">About Me</a></li>
+	  <!--Google Translate taken from Google's Free Website Translate Button creator: http://translate.google.com/manager/website/?hl=en-->
+      <li><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+    </ul>
+  </div>
+</nav>
+<div class="gloomy"> Program 01-26: Version 2. (Client and Server using PHP)</div>
+</head>
+
+<body>
+	<form action="processorder.php" method=post>
+		<center>
+	<table border=0>
+	<tr>
+		<td width=150>ID<br>
+		<td width=150>Item<br>
+	  <td width=150>Cost of Item<br>
+		<td width=150>Quantity<br>
+	</td>
+	</tr>
+	<tr>
+	<td>20</td>
+	<td>Pen</td>
+	<td>$2</td>
+	<td align="center"><input type="text" name="penquant" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+	<td>55</td>
+	<td>Pencil</td>
+	<td>$1</td>
+	<td align="center"><input type="text" name="pencilquant" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+	<td>57</td>
+	<td>Paper</td>
+	<td>$30</td>
+	<td align="center"><input type="text" name="paperquant" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+	<td>60</td>
+	<td>Stapler</td>
+	<td>$50</td>
+	<td align="center"><input type="text" name="staplerquant" size="3" maxlength="3"></td>
+	</tr>
+	<tr>
+	<td colspan="2" align="center"><br>
+	<input type="submit" value="Enter Order"></td>
+	</tr>
+	</table>
+	</center>
+	</form>
+</body>
+<!--taken from Dr Hanyes website-->
+<footer>
+<h6 align="left"> Last changed:
+   <script language="JavaScript" type="text/javascript">
+     document.write(document.lastModified);
+   </script>
+</h6>
+</footer>
+</html>

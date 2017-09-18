@@ -1,0 +1,14 @@
+
+Michael Masterson
+http://people.emich.edu/mmaster8/COSC436/020917/Q4/Q4.txt
+COSC 436
+Assignment 02/09/17
+Winter 2017
+Problem 4
+
+See for what assignment is :
+http://emunix.emich.edu/~haynes/436/wi17/Assignment/hw0209.txt
+
+4. Is array_rand() choose_with_replacement or choose_without_replacement?
+
+array_rand() is choose without replacement

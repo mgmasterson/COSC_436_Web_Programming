@@ -1,0 +1,20 @@
+/* Michael Masterson
+http://people.emich.edu/mmaster8/COSC436/012617/012617.css
+COSC 436
+Assignment 01/26/17
+Winter 2017 */
+/*CSS for the website*/
+.gloomy{
+	color: black;
+	font-family: "Chiller", Times, serif;
+	text-align: center;
+	font-size: 40px;
+}
+.searchString
+{
+background-color:yellow;
+}
+
+.table, th, td {
+ border: 1px solid black;
+}

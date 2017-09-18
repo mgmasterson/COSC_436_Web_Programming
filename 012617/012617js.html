@@ -1,0 +1,135 @@
+<!--
+Michael Masterson
+hhttp://people.emich.edu/mmaster8/COSC436/012617/012617js.html
+COSC 436
+Assignment 01/26/17
+Winter 2017
+
+See for what assignment is :
+http://emunix.emich.edu/~haynes/436/wi17/Assignment/hw0126.txt
+-->
+<!-- Sites referenced:
+http://www.w3schools.com/html/html_tables.asp
+http://www.w3schools.com/css/css_table.asp
+http://www.javascriptkit.com/howto/newtech2.shtml
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>012617</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="012617.css">
+	<script>
+	//srcipt to calculate total from items and quantity.
+	function calculateTotal ()
+	{
+	    var pen = parseInt(document.getElementById("penquantity").value);
+	    var pencil = parseInt(document.getElementById("pencilquantity").value);
+	    var paper = parseInt(document.getElementById("paperquantity").value);
+	    var staple = parseInt(document.getElementById("staplequantity").value);
+	    var penTotal = pen * 2;
+	    var pencilTotal = pencil * 1;
+	    var paperTotal = paper * 30;
+	    var stapleTotal = staple * 50;
+	    var realTotal = penTotal + pencilTotal + paperTotal + stapleTotal;
+	    document.getElementById("test").value=realTotal;
+	    }
+
+</script>
+<style>
+.table, td {
+ border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<!--Navigation bar-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://people.emich.edu/mmaster8/">Michael EMU</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://people.emich.edu/mmaster8/">Home</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/Archives/">Archives</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/COSC436/">COSC 436</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/aboutme.html">About Me</a></li>
+	  <!--Google Translate taken from Google's Free Website Translate Button creator: http://translate.google.com/manager/website/?hl=en-->
+      <li><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+    </ul>
+  </div>
+</nav>
+<div class="gloomy"> Program 01-26: Version 1. (Client-Only using Javascript)</div>
+</head>
+
+<body>
+	<center>
+
+<div class="table">
+
+<table>
+   <tr>
+		 <!--Item headers-->
+      <th>ID</th>
+      <th>Item</th>
+      <th>Cost of item</th>
+      <th>Quantity ordered</th>
+   </tr>
+	 <!--table values-->
+  <tr>
+      <td>20</td>
+      <td>Pen</td>
+      <td>$2</td>
+      <td><input type="text" value="0" id="penquantity"></td>
+      <td></td>
+   </tr>
+   <tr>
+  <td>55</td>
+  <td>Pencil</td>
+  <td>$1</td>
+  <td><input type="text" value="0" id="pencilquantity"></td>
+</tr>
+   <tr>
+  <td>57</td>
+  <td>Paper</td>
+  <td>$30</td>
+  <td><input type="text" value="0" id="paperquantity"></td>
+   </tr>
+     <tr>
+      <td>60</td>
+      <td>Stapler</td>
+      <td>$50</td>
+      <td><input type="text" value="0" id="staplequantity"></td>
+   </tr>
+<tr>
+	<!--calculate and display value of order-->
+<td> <input type="button" value="Total" onclick="calculateTotal()"> </td>
+<td> <input type="text" id="test"> </td>
+</tr>
+</table>
+</div>
+<br />
+<!--print invoice-->
+<form>
+<input type="button" value="Print Invoice" onClick="window.print()">
+</form>
+
+</center>
+</body>
+<!--taken from Dr Hanyes website-->
+<footer>
+<h6 align="left"> Last changed:
+   <script language="JavaScript" type="text/javascript">
+     document.write(document.lastModified);
+   </script>
+</h6>
+</footer>
+</html>

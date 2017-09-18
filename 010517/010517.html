@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Michael Masterson
+http://people.emich.edu/mmaster8/COSC436/010517.html
+COSC 436
+Assignment 01/05/17
+Winter 2017
+
+
+http://stackoverflow.com/questions/8644428/how-to-highlight-text-using-javascript
+thiscouldbebetter.neocities.org/texteditor.html
+http://stackoverflow.com/questions/12450381/how-to-replace-ltbgt-with-b-in-the-whole-document-and-without-jquery
+W3schools.com examples
+-->
+<head>
+	<title>010517</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="010517.css">
+	<script src="jquery-3.1.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<!--Navigation bar-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://people.emich.edu/mmaster8/">Michael EMU</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://people.emich.edu/mmaster8/">Home</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/Archives/">Archives</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/COSC436/">COSC 436</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/aboutme.html">About Me</a></li>
+	  <!--Google Translate taken from Google's Free Website Translate Button creator: http://translate.google.com/manager/website/?hl=en-->
+      <li><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+    </ul>
+  </div>
+</nav>
+<div class="gloomy">Program 01-05</div>
+<!--show the file -->
+
+<table>
+	<tr><td>Text to Save:</td></tr>
+	<tr>
+		<td colspan="3">
+			<textarea id="displaytext" style="width:512px;height:256px"></textarea>
+		</td>
+	</tr>
+	<tr>
+		<!--save file-->
+		</th><td>Filename to Save As:</td>
+		<td><input id="inputFileNameToSaveAs"></input></td>
+		<td><button onclick="saveTextAsFile()">Save Text to File</button></td>
+	</tr>
+	<tr>
+		<!--file to load -->
+		<td>Select a File to Load:</td>
+		<td><input type="file" id="loadfile"></td>
+		<td><button onclick="loadfileto()">Load Selected File</button><td>
+	</tr>
+	<tr>
+		<!--replacement string-->
+		<td>replacement string:</td>
+		<td><button onclick="fun2()">Replace</button><td>
+	</tr>
+	<tr>
+		<!--search string-->
+		<td>Search:</td>
+		<td><input id="search"></td>
+		<td><button onclick="searchString('sample')">Search/Highlight</button><td>
+	</tr>
+	<tr>
+		<!--scan-->
+		<td>Scan:</td>
+		<td><button onclick="scan()">Scan</button><td>
+		<td><p id="demo"></p></td>
+	</tr>
+</table>
+
+<script src="010517.js"></script>
+<br></br>
+<!--taken from Dr Hanyes website-->
+<footer>
+<h6 align="left"> Last changed:
+   <script language="JavaScript" type="text/javascript">
+     document.write(document.lastModified);
+   </script>
+</h6>
+</footer>
+</body>
+</html>
