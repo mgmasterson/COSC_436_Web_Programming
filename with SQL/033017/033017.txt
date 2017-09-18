@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+Michael Masterson
+http://db2.emich.edu/~mmaster8
+COSC 436
+Assignment 03/30/17
+Winter 2017
+
+Sources:
+http://stackoverflow.com/questions/34259886/mysql-check-if-table-already-exists
+https://www.w3schools.com/sql/sql_autoincrement.asp
+http://stackoverflow.com/questions/8242567/acceptable-field-type-and-size-for-email-address
+http://stackoverflow.com/questions/20296777/trying-to-check-if-username-already-exists-in-mysql-database-using-php
+-->
+<head>
+    <title>033017</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="011217.css">
+    <script src="jquery-3.1.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+</head>
+<body>
+<!--Navigation bar-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://people.emich.edu/mmaster8/">Michael EMU</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="http://people.emich.edu/mmaster8/">Home</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/Archives/">Archives</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/COSC436/">COSC 436</a></li>
+      <li><a href="http://people.emich.edu/mmaster8/aboutme.html">About Me</a></li>
+      <!--Google Translate taken from Google's Free Website Translate Button creator: http://translate.google.com/manager/website/?hl=en-->
+      <li><div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></li>
+    </ul>
+  </div>
+</nav>
+
+<h1>033017</h1>
+<center>
+
+    <form action="" method="post">
+        username: <input type="text" name="username1" /><br><br>
+        First Name: <input type="text" name="fname" /><br><br>
+        Last Name: <input type="text" name="lname" /><br><br>
+        email: <input type="text" name="email" /><br><br>
+        password: <input type="password" name="password" /><br><br>
+        <input type="submit" name="submit">
+    </form>
+</body>
+<footer>
+<h6 align="left"> Last changed:
+   <script language="JavaScript" type="text/javascript">
+     document.write(document.lastModified);
+   </script>
+</h6>
+</footer>
+</center>
+</html>
+
+<?php
+$servername = "localhost";
+$username = "mmaster8";
+$password = "360de99339";
+$dbname = "Wi2017_436_mmaster8";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+//Testing to see if the submit button has been pressed referenced by name
+    if(isset($_POST['submit']))
+    {
+        echo "button press";
+        //variables
+        $username1 = $_POST['username1'];
+        $fname = $_POST['fname'];
+        $lname = $_POST['lname'];
+        $email = $_POST['email'];
+        $password1 = $_POST['password'];
+
+        $sql = "CREATE TABLE if not exists Wi2017_436_mmaster8.Users (
+        ID int NOT NULL AUTO_INCREMENT,
+        username1 VARCHAR(255) UNIQUE,
+        fname VARCHAR(255),
+        lname VARCHAR(255),
+        email VARCHAR(255),
+        password VARCHAR(255),
+        PRIMARY KEY (ID)
+        );";
+
+        //Inserts new record into table from sql statement
+        if ($conn->query($sql) === TRUE) {
+            echo "table created";
+        } else {
+            echo "error";
+        }
+
+        //Create sql statement to insert into table
+            $sql2 = "INSERT INTO Users (username1, fname, lname, email, password)
+                                VALUES ('" . $username1 . "','" . $fname . "','" . $lname . "','" . $email . "','" . $password1 . "');";
+
+    if($conn->query($sql2) === TRUE)
+        {
+            echo "New record created successfully";
+        }
+        else
+        {
+            echo "<span style='color:red;' id='error'>error</span>";
+        }
+
+    $query = mysql_query("SELECT username FROM Users WHERE username='".$username."'");
+
+  if (mysql_num_rows($query) != 0)
+  {
+      echo "Username already exists";
+  }
+
+}
+$conn->close();
+
+?>

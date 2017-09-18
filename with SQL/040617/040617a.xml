@@ -1,0 +1,60 @@
+<?xml version = "1.0" standalone="yes"?>
+<!--
+Michael Masterson
+E00942993
+April 11, 2017
+Susan Haynes
+COSC 436
+db2.emich.edu/~mmaster8/040617
+-->
+<!DOCTYPE NEWSPAPER [
+<!ELEMENT NEWSPAPER (ARTICLE+)>
+<!ELEMENT ARTICLE (HEADLINE,BYLINE,LEAD,BODY,NOTES)>
+<!ELEMENT HEADLINE (#PCDATA)>
+<!ELEMENT BYLINE (#PCDATA)>
+<!ELEMENT LEAD (#PCDATA)>
+<!ELEMENT BODY (#PCDATA)>
+<!ELEMENT NOTES (#PCDATA)>
+
+<!ATTLIST ARTICLE AUTHOR CDATA #REQUIRED>
+<!ATTLIST ARTICLE EDITOR CDATA #IMPLIED>
+<!ATTLIST ARTICLE DATE CDATA #IMPLIED>
+<!ATTLIST ARTICLE EDITION CDATA #IMPLIED>
+
+<!ENTITY NEWSPAPER "Michael Masterson">
+<!ENTITY PUBLISHER "Lucha!">
+<!ENTITY COPYRIGHT "Copyright 2017 Lucha!">
+
+]
+
+<NEWSPAPER>
+    <ARTICLE AUTHOR="Michael Masterson">
+        <HEADLINE>Ip Man Returns!</HEADLINE>
+        <BYLINE></BYLINE>
+        <LEAD></LEAD>
+        <BODY>The Legandary Kung Fu actor Donnie Yen (Star Wars Rogue One) will
+            return as Ip Man in Ip Man 4 confirmed by his Twitter account. Although
+            at the time, there were no more details other sources have state that
+            production should start in 2018.
+            Yen is known for martial arts films from Iron Monkey to the Ip Man series,
+            Crouching Tiger, Hidden Dragon: Sword of Destiny, and recently Star Wars Rogue One.</BODY>
+        <NOTES>http://www.straitstimes.com/lifestyle/entertainment/donnie-yen-will-make-ip-man-4-despite-hinting-previously-he-was-retiring</NOTES>
+    </ARTICLE>
+
+    <ARTICLE AUTHOR="Michael Masterson">
+        <HEADLINE>Graduation and Articulation Argreements</HEADLINE>
+        <BYLINE></BYLINE>
+        <LEAD></LEAD>
+        <BODY>Many students at EMU may not know that EMU does offer Articualtion agreements
+            with other schools in the state. Those agreements allows students to take classes
+            at a community college, for example, and then transfer for a Bacholer Degree at EMU.
+            Recently a student at EMU had trouble with his when graduation evaluators ran his audit.
+            He says that they ran the audit and told him that in his major that two courses were not
+            checked off. After he talked to the department and they confirmed via a different person at
+            the college that the evaluators needed to use the articulation agreement year that he started
+            at the other community college. When ran by using the correct year, the courses that he needed disappeared
+            and was able to continue with his degree. When the student was asked for the comment he said "
+            All I want to do is to help other students in this situation."</BODY>
+        <NOTES></NOTES>
+    </ARTICLE>
+</NEWSPAPER>
